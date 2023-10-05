@@ -1,0 +1,53 @@
+€ -> atribuire
+$ -> verificare condiție 
+¥ -> negare
+%
+
+
+
+Program 1:
+#adu basic
+
+funcție principal() {
+     Normal i, x € 5
+     Cicleaza (i<$x) {
+      Printeaza(i, Normal)
+}
+}
+
+
+Program 2:
+#adu basic
+#adu matematica
+
+Funcție principal() {
+      Normal x € 11
+      Dacă ( x%2$) {
+        Printează (“e par”, String)
+}
+}
+
+Program 3: 
+#adu basic
+#adu desenator
+
+Funcție principal() { 
+       Normal x € 100, y € 3, i€0
+       De la i pana la y { 
+        Desenator.făTriunghi(x)
+        }
+
+
+Program 4:
+#adu basic
+#adu liste
+
+Funcție principal() { 
+         Lista<Normal> L € <1,3,5,7,12>
+         Normal suma = 0, i€0
+         De la i pana la L.lungime { 
+           Dacă (L.get(i)¥$0) { 
+             Printeaza(L.get(i))
+            }
+         }
+}
