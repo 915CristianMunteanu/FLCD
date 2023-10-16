@@ -1,0 +1,25 @@
+adu
+functie 
+normal 
+lista 
+daca 
+altfel 
+printeaza 
+citeste 
+cicleaza 
+de la ... pana la ...
+returneaza 
+incearca 
+arunca 
+prinde
++
+- 
+* 
+/ 
+$ 
+€ 
+¥ 
+< 
+> 
+<€ 
+€>

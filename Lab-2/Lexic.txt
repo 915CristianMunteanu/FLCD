@@ -1,0 +1,27 @@
+Alphabet:
+a. Upper (A-Z) and lower case letters (a-z) of the English alphabet
+b. Underline character '_';
+c. Decimal digits (0-9);
+   Lexic: 
+	a. Special symbols:
+	- operators: + - * / $ € ¥ < > <€ €>
+	- separatos: () [] {} space
+	- reserved words: adu functie normal lista daca altfel printeaza citeste cicleaza de la ... pana la ... returneaza incearca arunca prinde
+	b. identifiers:
+	letter ::= "A" | "B" | ...| "Z" | "a" | "b" | ... | "z"
+	digit ::= "0" | "1" |...| "9"
+	identifier ::= letter | letter{letter}{digit}
+	c. constants:
+	1. normal: 	
+	number:=digit{number}
+
+	2. character:
+	character:='letter' | 'digit'
+
+	3.string: 
+	string:= char{string}
+
+	4.bool: 
+	bool:= 'true' | 'false'
+
+	

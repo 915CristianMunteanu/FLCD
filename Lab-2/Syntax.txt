@@ -1,0 +1,19 @@
+Syntax:
+program ::=  decllist ";" cmpdstmt "."
+decllist ::= declaration | declaration ";" decllist
+
+value ::= "NUMBER" | "CHARACTER" | "STRING" | "BOOL"
+declaration ::= IDENTIFIER " " "TYPE" "VALUE"
+variable ::= IDENTIFIER
+type ::= "BOOL" | "CHARACTER" | "NORMAL" | "STRING" 
+listdecl ::= "Lista" "<" type ">" € "<" {normal} | {bool} | {string}  | {character} ">" 
+assignstmt ::= IDENTIFIER "€" VALUE | EXPRESSION 
+expression ::= VARIABLE OPERATOR VALUE | VALUE OPERATOR VALUE
+iostmt ::= "CITESTE" | "PRINTEAZA" "(" IDENTIFIER ")"
+relation::= "<" | "<€" | "$" | "¥" | ">€" | ">"
+ifstmt ::= "DACA" CONDITION "{" stmtlist "}"
+condition ::= VARIABLE RELATION VALUE | VARIABLE RELATION VARIABLE
+stmtlist ::= stmt | stmt stmtlist
+stmt ::= forstmt | assignstmt | ifstmt | iostmt
+forstmt ::= "DE LA " VALUE "PANA LA" VALUE "{" stmtlist"}" | "DE LA " VALUE "PANA LA" VARIABLE"{" stmtlist"}" | "DE LA " VARIABLE "PANA LA" VARIABLE "{" stmtlist "}"
+funcdecl ::= "FUNCTIE" IDENTIFIER "{" stmtlist"}"
