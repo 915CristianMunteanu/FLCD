@@ -1,7 +1,8 @@
 Syntax:
-program ::=  decllist ";" cmpdstmt "."
+program ::= imports decllist cmpdstmt 
+imports ::= {import} 
+import ::= "#" "ADU" IDENTIFIER
 decllist ::= declaration | declaration ";" decllist
-
 value ::= "NUMBER" | "CHARACTER" | "STRING" | "BOOL"
 declaration ::= IDENTIFIER " " "TYPE" "VALUE"
 variable ::= IDENTIFIER
