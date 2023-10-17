@@ -1,0 +1,4 @@
+He had some things at the end of the file Lexic.txt
+In Syntax.txt he used CASE but he doesnt have it as a reserved word in Lexic.txt
+As i see in Lexic.txt he doesnt use any small letters (a,b,c), only capitals, I dont know if this is the case.
+Syntax.in seems right.
