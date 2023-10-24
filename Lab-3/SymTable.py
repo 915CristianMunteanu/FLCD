@@ -1,36 +1,75 @@
-class HashTableSymbolTable:
-    def __init__(self, size=100):
+class HashSymTable:
+    def __init__(self, size=101):
         self.size = size
         self.table = [None] * size
 
-    def _hash(self, key):
+    def primary_hash(self, key):
         return hash(key) % self.size
 
+    def secondary_hash(self, key):
+        return 1 + (hash(key) % (self.size - 1))
+
     def insert(self, key, value):
-        index = self._hash(key)
-        if self.table[index] is None:
-            self.table[index] = []
-        self.table[index].append((key, value))
+        index1 = self.primary_hash(key)
+        index2 = self.secondary_hash(key)
+
+        initial_index = index1
+
+        while self.table[index1] is not None:
+            if self.table[index1][0] == key:
+                self.table[index1] = (key, value)
+                return
+
+            index1 = (index1 + index2) % self.size
+            if index1 == initial_index:
+                return
+
+        self.table[index1] = (key, value)
 
     def lookup(self, key):
-        index = self._hash(key)
-        if self.table[index] is not None:
-            for k, v in self.table[index]:
-                if k == key:
-                    return v
+        index1 = self.primary_hash(key)
+        index2 = self.secondary_hash(key)
+
+        initial_index = index1
+
+        while self.table[index1] is not None:
+            if self.table[index1][0] == key:
+                return self.table[index1][1]
+
+            index1 = (index1 + index2) % self.size
+            if index1 == initial_index:
+                return None
+
         return None
 
     def delete(self, key):
-        index = self._hash(key)
-        if self.table[index] is not None:
-            for item in self.table[index]:
-                if item[0] == key:
-                    self.table[index].remove(item)
+        index1 = self.primary_hash(key)
+        index2 = self.secondary_hash(key)
+
+        initial_index = index1
+
+        while self.table[index1] is not None:
+            if self.table[index1][0] == key:
+                self.table[index1] = None
+                return True
+
+            index1 = (index1 + index2) % self.size
+            if index1 == initial_index:
+                return False
+
+        return False
 
     def display(self):
-        for i, chain in enumerate(self.table):
-            if chain:  # Check if the chain (list) is not empty
-                print(f"Index {i}:")
-                for k, v in chain:
-                    print(f"    Key: {k}, Value: {v}")
+        for i, entry in enumerate(self.table):
+            if entry:
+                print(f"Index {i}: Key: {entry[0]}, Value: {entry[1]}")
 
+
+
+htable = HashSymTable()
+htable.insert("Danut", "Avocat")
+htable.insert("Danut", 25)
+htable.display()
+print(htable.lookup("Danut"))
+htable.delete("Danut")
+print(htable.lookup("Danut"))
