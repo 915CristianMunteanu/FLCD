@@ -1,0 +1,9 @@
+(q, 1, epsilon, S)
+expand |-- (q, 1, S 1, X Y )
+expand |-- (q, 1, S 1 X 1, <€ S >€ Y )
+mom ins |-- (b, 1, S 1 X 1, <€ S >€ Y )
+ant try |-- (q, 1, S 1 X 2, normal Z Y )
+mom ins |-- (b, 1, S 1 X 2, normal Z Y )
+ant try |-- (b, 1, S 1, X Z Y )
+ant try |-- (b, 1, , S Z Y )
+Sequence not accepted

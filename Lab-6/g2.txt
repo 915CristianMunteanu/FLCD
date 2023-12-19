@@ -1,0 +1,12 @@
+N = { S X Y Z }
+E = { $ ¥ <€ >€ normal }
+S = S
+P = {
+    S -> X Y
+    X -> <€ S >€
+    X -> normal Z
+    Y -> ¥ S
+    Y -> epsilon
+    Z -> epsilon
+    Z -> >€ X
+}
