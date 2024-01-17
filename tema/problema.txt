@@ -1,0 +1,12 @@
+{ 
+int a2 = 2
+float raza = 25 
+float pi = 314 
+float perimetru = 2 * pi * raza
+float aria = pi * raza * raza 
+if( a2 < pi ){
+    cout << corect
+}
+cout << perimetru
+cout << aria 
+} 
